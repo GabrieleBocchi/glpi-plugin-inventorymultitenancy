@@ -1,0 +1,14 @@
+parameters:
+    level: 5
+    treatPhpDocTypesAsCertain: false
+    paths:
+        - setup.php
+        - hook.php
+        - tests
+    tmpDir: var/phpstan
+    bootstrapFiles:
+        - ../../stubs/glpi_constants.php
+    scanDirectories:
+        - ../../inc
+        - ../../src
+        - ../../tests/src

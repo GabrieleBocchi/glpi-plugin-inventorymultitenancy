@@ -10,7 +10,8 @@
         "php": ">=7.4"
     },
     "require-dev": {
-        "glpi-project/tools": "^0.8.3"
+        "glpi-project/tools": "^0.8.3",
+        "squizlabs/php_codesniffer": "^4.0"
     },
     "config": {
         "optimize-autoloader": true,

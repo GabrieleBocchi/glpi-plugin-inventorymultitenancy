@@ -1,5 +1,3 @@
-<?php
-
 /**
  * -------------------------------------------------------------------------
  * Inventory Multitenancy plugin for GLPI
@@ -19,12 +17,8 @@
  * -------------------------------------------------------------------------
  */
 
-function plugin_inventorymultitenancy_install()
-{
-    return true;
-}
-
-function plugin_inventorymultitenancy_uninstall()
-{
-    return true;
-}
+module.exports = {
+    testEnvironment: 'node',
+    testMatch: ['<rootDir>/tests/js/jest/**/*.test.js'],
+    transform: {},
+};

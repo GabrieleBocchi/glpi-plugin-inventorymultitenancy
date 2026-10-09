@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<psalm
+    errorLevel="4"
+    cacheDirectory="var/psalm"
+    findUnusedBaselineEntry="false"
+    findUnusedCode="false"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="https://getpsalm.org/schema/config"
+    xsi:schemaLocation="https://getpsalm.org/schema/config ../../vendor/vimeo/psalm/config.xsd"
+>
+    <projectFiles>
+        <file name="setup.php"/>
+        <file name="hook.php"/>
+    </projectFiles>
+    <stubs>
+        <file name="../../stubs/glpi_constants.php"/>
+    </stubs>
+    <extraFiles>
+        <directory name="../../src"/>
+    </extraFiles>
+</psalm>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <name>Inventory Multitenancy</name>
+  <key>inventorymultitenancy</key>
+  <state>stable</state>
+  <description>
+    <short>
+      <en>Enforces tenant isolation during native inventory import.</en>
+    </short>
+    <long>
+      <en>Forces every asset imported by the native inventory into the active entity of the importing session, or one of its sub-entities.</en>
+    </long>
+  </description>
+  <homepage>https://github.com/GabrieleBocchi/glpi-plugin-inventorymultitenancy</homepage>
+  <download>https://github.com/GabrieleBocchi/glpi-plugin-inventorymultitenancy/releases</download>
+  <issues>https://github.com/GabrieleBocchi/glpi-plugin-inventorymultitenancy/issues</issues>
+  <readme>https://github.com/GabrieleBocchi/glpi-plugin-inventorymultitenancy/blob/main/README.md</readme>
+  <authors>
+    <author>NetEye R&amp;D Team</author>
+  </authors>
+  <versions>
+    <version>
+      <num>1.0.0</num>
+      <compatibility>~12.0.0</compatibility>
+      <download_url>https://github.com/GabrieleBocchi/glpi-plugin-inventorymultitenancy/releases/download/1.0.0/glpi-inventorymultitenancy-1.0.0.tar.bz2</download_url>
+    </version>
+  </versions>
+  <langs>
+    <lang>en_GB</lang>
+  </langs>
+  <license>MIT OR Apache-2.0</license>
+  <tags>
+    <en>
+      <tag>inventory</tag>
+      <tag>entity</tag>
+    </en>
+  </tags>
+</root>

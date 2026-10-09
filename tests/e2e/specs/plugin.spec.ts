@@ -1,5 +1,3 @@
-<?php
-
 /**
  * -------------------------------------------------------------------------
  * Inventory Multitenancy plugin for GLPI
@@ -19,12 +17,12 @@
  * -------------------------------------------------------------------------
  */
 
-function plugin_inventorymultitenancy_install()
-{
-    return true;
-}
+import { expect, test } from '../../../../../tests/e2e/fixtures/glpi_fixture';
+import { Profiles } from '../../../../../tests/e2e/utils/Profiles';
 
-function plugin_inventorymultitenancy_uninstall()
-{
-    return true;
-}
+test('Plugin is listed in the plugins page', async ({ page, profile }) => {
+    await profile.set(Profiles.SuperAdmin);
+    await page.goto('/front/plugin.php');
+
+    await expect(page.getByRole('main').getByText('Inventory Multitenancy', { exact: true })).toBeVisible();
+});

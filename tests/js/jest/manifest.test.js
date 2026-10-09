@@ -1,5 +1,3 @@
-<?php
-
 /**
  * -------------------------------------------------------------------------
  * Inventory Multitenancy plugin for GLPI
@@ -19,12 +17,16 @@
  * -------------------------------------------------------------------------
  */
 
-function plugin_inventorymultitenancy_install()
-{
-    return true;
-}
+const fs = require('fs');
+const path = require('path');
 
-function plugin_inventorymultitenancy_uninstall()
-{
-    return true;
-}
+const root = path.resolve(__dirname, '../../..');
+
+test('plugin.xml declares the version defined in setup.php', () => {
+    const setup = fs.readFileSync(path.join(root, 'setup.php'), 'utf8');
+    const manifest = fs.readFileSync(path.join(root, 'plugin.xml'), 'utf8');
+
+    const version = setup.match(/define\('PLUGIN_INVENTORYMULTITENANCY_VERSION', '([^']+)'\)/)[1];
+
+    expect(manifest).toContain(`<num>${version}</num>`);
+});

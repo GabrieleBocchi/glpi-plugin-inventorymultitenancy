@@ -30,3 +30,18 @@ jobs:
       glpi-version: ${{ matrix.glpi-version }}
       php-version: ${{ matrix.php-version }}
       db-image: ${{ matrix.db-image }}
+      init-script: "./.github/workflows/init-script.sh"
+      extra-services: "openldap"
+      run-e2e-tests: ${{ matrix.run-e2e-tests }}
+    secrets:
+      extra-env: |
+        PLUGIN_INVENTORYMULTITENANCY_CI_EXTRA_ENV=loaded
+  coverage-report:
+    name: Coverage report
+    needs: ci
+    permissions:
+      actions: read
+      pull-requests: write
+    uses: GabrieleBocchi/plugin-ci-workflows/.github/workflows/coverage-report.yml@7da90f89e332154dbd478a43e7b4163857cb84b7 # improve-security-ci-workflows
+    with:
+      plugin-key: inventorymultitenancy

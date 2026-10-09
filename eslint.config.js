@@ -1,5 +1,3 @@
-<?php
-
 /**
  * -------------------------------------------------------------------------
  * Inventory Multitenancy plugin for GLPI
@@ -19,12 +17,23 @@
  * -------------------------------------------------------------------------
  */
 
-function plugin_inventorymultitenancy_install()
-{
-    return true;
-}
+const js = require('@eslint/js');
+const globals = require('globals');
 
-function plugin_inventorymultitenancy_uninstall()
-{
-    return true;
-}
+module.exports = [
+    {
+        ignores: ['node_modules/', 'var/', 'vendor/'],
+    },
+    js.configs.recommended,
+    {
+        languageOptions: {
+            globals: globals.node,
+        },
+    },
+    {
+        files: ['tests/js/jest/**/*.js'],
+        languageOptions: {
+            globals: globals.jest,
+        },
+    },
+];

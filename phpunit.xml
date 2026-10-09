@@ -10,4 +10,10 @@
             <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
+    <source>
+        <include>
+            <file>setup.php</file>
+            <file>hook.php</file>
+        </include>
+    </source>
 </phpunit>
