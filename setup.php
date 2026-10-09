@@ -1,14 +1,34 @@
 <?php
+
+/**
+ * -------------------------------------------------------------------------
+ * Inventory Multitenancy plugin for GLPI
+ * -------------------------------------------------------------------------
+ *
+ * LICENSE
+ *
+ * This file is part of Inventory Multitenancy.
+ *
+ * Inventory Multitenancy is dual-licensed under the MIT License and the
+ * Apache License, Version 2.0, at your option.
+ * See the LICENSE-MIT and LICENSE-APACHE files at the root of the project.
+ * -------------------------------------------------------------------------
+ * @copyright Copyright (C) 2026 Würth IT Italy S.r.l.
+ * @license   MIT OR Apache-2.0
+ * @link      https://github.com/neteye-platform/glpi-plugin-inventorymultitenancy
+ * -------------------------------------------------------------------------
+ */
+
 define('PLUGIN_INVENTORYMULTITENANCY_VERSION', '1.0.0');
 
 function plugin_version_inventorymultitenancy()
 {
-    return array('name' => "Inventory Multitenancy",
+    return ['name' => "Inventory Multitenancy",
         'version' => PLUGIN_INVENTORYMULTITENANCY_VERSION,
         'author' => 'NetEye R&D Team',
         'license' => 'MIT/Apache-2.0',
         'homepage' => 'https://neteye-blog.com',
-        'minGlpiVersion' => '10.0.6'); // For compatibility / no install in version < 0.80
+        'minGlpiVersion' => '10.0.6']; // For compatibility / no install in version < 0.80
 }
 
 function plugin_inventorymultitenancy_check_prerequisites()

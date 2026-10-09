@@ -1,0 +1,9 @@
+{
+  "name": "inventorymultitenancy",
+  "private": true,
+  "description": "GLPI plugin that enforces tenant isolation during native inventory import.",
+  "license": "(MIT OR Apache-2.0)",
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}

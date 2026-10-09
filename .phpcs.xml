@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset>
+    <file>.</file>
+
+    <exclude-pattern type="relative">^node_modules/*</exclude-pattern>
+    <exclude-pattern type="relative">^var/*</exclude-pattern>
+    <exclude-pattern type="relative">^vendor/*</exclude-pattern>
+
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg value="p"/>
+
+    <rule ref="PSR12">
+        <exclude name="Generic.Files.LineLength"/>
+    </rule>
+
+    <!-- Test files may declare their own test doubles. -->
+    <rule ref="PSR1.Classes.ClassDeclaration.MultipleClasses">
+        <exclude-pattern>*/tests/*</exclude-pattern>
+    </rule>
+</ruleset>

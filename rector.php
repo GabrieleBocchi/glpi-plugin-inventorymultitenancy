@@ -19,12 +19,13 @@
  * -------------------------------------------------------------------------
  */
 
-function plugin_inventorymultitenancy_install()
-{
-    return true;
-}
+use Rector\Config\RectorConfig;
 
-function plugin_inventorymultitenancy_uninstall()
-{
-    return true;
-}
+return RectorConfig::configure()
+    ->withPaths([
+        __DIR__ . '/setup.php',
+        __DIR__ . '/hook.php',
+        __DIR__ . '/tests',
+    ])
+    ->withCache(__DIR__ . '/var/rector')
+    ->withPhpSets(php74: true);

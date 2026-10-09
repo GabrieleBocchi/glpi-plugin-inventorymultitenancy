@@ -19,12 +19,21 @@
  * -------------------------------------------------------------------------
  */
 
-function plugin_inventorymultitenancy_install()
-{
-    return true;
-}
+namespace GlpiPlugin\Inventorymultitenancy\Tests\Units;
 
-function plugin_inventorymultitenancy_uninstall()
+use PHPUnit\Framework\TestCase;
+
+/**
+ * Checks that the `extra-env` secret of the plugin CI workflow is exposed to PHPUnit.
+ */
+final class CiEnvironmentTest extends TestCase
 {
-    return true;
+    public function testExtraEnvIsExposed(): void
+    {
+        if (getenv('GITHUB_ACTIONS') !== 'true') {
+            $this->markTestSkipped('Only relevant on GitHub Actions.');
+        }
+
+        $this->assertSame('loaded', getenv('PLUGIN_INVENTORYMULTITENANCY_CI_EXTRA_ENV'));
+    }
 }
